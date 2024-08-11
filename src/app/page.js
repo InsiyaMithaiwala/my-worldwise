@@ -1,10 +1,22 @@
-import WorldIDVerification from '/components/WorldIDVerification';
+// src/app/page.js
+
+import WorldIDVerification from "/components/WorldIDVerification";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Welcome to World ID Verification</h1>
-      <WorldIDVerification />
+    <div
+      style={{
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        marginTop:"250px"
+        
+      }}
+    >
+      <div>
+        <h1 style={{ textAlign: "center" }}>Welcome to WorldWise</h1>
+        <WorldIDVerification />
+      </div>
     </div>
   );
 }

@@ -51,6 +51,7 @@ const WorldVerification = () => {
     borderRadius: "5px",
     cursor: "pointer",
     transition: "background-color 0.3s ease",
+    marginTop: "-600px", 
   };
 
   const buttonHoverStyle = {
