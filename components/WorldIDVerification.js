@@ -1,19 +1,19 @@
 // src/components/WorldVerification.js
 
 "use client";
-import { useRouter } from 'next/navigation';
-import { IDKitWidget, VerificationLevel } from '@worldcoin/idkit';
+import { useRouter } from "next/navigation";
+import { IDKitWidget, VerificationLevel } from "@worldcoin/idkit";
 
 const verifyProof = async (proof) => {
   try {
-    const response = await fetch('/api/verifyProof', {
-      method: 'POST',
+    const response = await fetch("/api/verifyProof", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(proof),
     });
-    
+
     const data = await response.json();
     if (response.ok) {
       return data.verified;
@@ -21,7 +21,7 @@ const verifyProof = async (proof) => {
       throw new Error(`Error: ${data.error}`);
     }
   } catch (error) {
-    console.error('Verification error:', error);
+    console.error("Verification error:", error);
     return false;
   }
 };
@@ -31,30 +31,30 @@ const WorldVerification = () => {
 
   const onSuccess = () => {
     console.log("Verification successful");
-    router.push('https://world-wise-flame.vercel.app/verified.html');
+    router.push("https://world-wise-flame.vercel.app/verified.html");
   };
 
   const containerStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100vh',
-    backgroundColor: '#f0f0f0',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh",
+    backgroundColor: "#f0f0f0",
   };
 
   const buttonStyle = {
-    padding: '10px 20px',
-    fontSize: '16px',
-    color: '#fff',
-    backgroundColor: '#0070f3',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    transition: 'background-color 0.3s ease',
+    padding: "10px 20px",
+    fontSize: "16px",
+    color: "#fff",
+    backgroundColor: "#000000",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    transition: "background-color 0.3s ease",
   };
 
   const buttonHoverStyle = {
-    backgroundColor: '#005bb5',
+    backgroundColor: "#005bb5",
   };
 
   return (
@@ -69,8 +69,14 @@ const WorldVerification = () => {
         {({ open }) => (
           <button
             style={buttonStyle}
-            onMouseOver={(e) => e.currentTarget.style.backgroundColor = buttonHoverStyle.backgroundColor}
-            onMouseOut={(e) => e.currentTarget.style.backgroundColor = buttonStyle.backgroundColor}
+            onMouseOver={(e) =>
+              (e.currentTarget.style.backgroundColor =
+                buttonHoverStyle.backgroundColor)
+            }
+            onMouseOut={(e) =>
+              (e.currentTarget.style.backgroundColor =
+                buttonStyle.backgroundColor)
+            }
             onClick={open}
           >
             Verify with World ID
