@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WorldWise</title>
+    <link
+      rel="icon"
+      href="https://miro.medium.com/v2/resize:fit:640/format:webp/1*6b5kOcCRjJ7XDj9M1zpmqw.png"
+      type="image/png"
+    />
+    <style>
+      /* Inline CSS for gallery animation */
+      .gallery-container {
+        overflow: hidden;
+        position: relative;
+        background-color: #f4f4f4;
+      }
+      
+      .gallery-wrapper {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+      }
+      
+      .gallery {
+        display: flex;
+        width: max-content;
+        animation: scroll-left 20s linear infinite;
+      }
+      
+      .gallery img {
+        width: 300px; /* Width of your images */
+        height: 200px; /* Height of your images */
+        object-fit: cover;
+        margin-right: 10px;
+      }
+      
+      @keyframes scroll-left {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+  </head>
+  <body>
+    <!--
+// v0 by Vercel.
+// https://v0.dev/t/74apweHqLy2
+-->
+
+    <div class="flex flex-col min-h-screen">
+      <header
+        class="bg-black text-white py-4 px-6 flex items-center justify-between"
+      >
+        <a class="flex items-center gap-2 text-lg font-semibold" href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-6 h-6"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+            <path d="M2 12h20"></path>
+          </svg>
+          <span>WorldWise</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6">
+          <a class="hover:underline" href="#"> Home </a>
+          <a class="hover:underline" href="#"> Courses </a>
+          <a class="hover:underline" href="#"> Profile </a>
+          <a class="hover:underline" href="#"> Rewards </a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a
+          style="background-color: white; color: black"
+          class="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium shadow transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+          href="signin.html"
+        >
+          Verify with WorldID
+        </a>
+          <button
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 md:hidden"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-6 h-6"
+            >
+              <line x1="4" x2="20" y1="12" y2="12"></line>
+              <line x1="4" x2="20" y1="6" y2="6"></line>
+              <line x1="4" x2="20" y1="18" y2="18"></line>
+            </svg>
+            <span class="sr-only">Toggle navigation</span>
+          </button>
+        </div>
+      </header>
+      <main class="flex-1">
+        <section class="bg-muted py-12 md:py-20">
+          <div
+            class="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 items-center"
+          >
+            <div>
+              <h1 class="text-3xl md:text-4xl font-bold mb-4">
+                Welcome to WorldWise
+              </h1>
+              <p class="text-muted-foreground mb-6">
+                Learn Web3 and crypto skills, verify them with Worldcoin's World
+                ID, and earn rewards.
+              </p>
+
+              <button
+                style="
+                  background-color: black;
+                  color: white;
+                  border: none;
+                  border-radius: 4px;
+                  padding: 8px 16px;
+                  cursor: pointer;
+                "
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3"
+              >
+                Start Learning Now
+              </button>
+            </div>
+            <div class="hidden md:block">
+              <img
+                src="https://whatfix.com/blog/wp-content/uploads/2021/11/change-management-checklist-48.png"
+                width="500"
+                height="400"
+                style="aspect-ratio: 500 / 400; object-fit: cover"
+                alt="Welcome"
+                class="rounded-lg"
+              />
+            </div>
+          </div>
+        </section>
+        <!-- <section class="py-12 md:py-20 bg-muted">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold mb-2">Your Progress</h2>
+          <p class="text-muted-foreground">Check your progress on the courses you've started.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div
+            class="text-card-foreground shadow-sm p-6 bg-background border border-input rounded-lg"
+            data-v0-t="card"
+          >
+            <div class="flex flex-col space-y-1.5 p-6">
+              <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">
+                Introduction to Blockchain
+              </h3>
+              <p class="text-sm text-muted-foreground">You've completed 75% of this course.</p>
+            </div>
+            <div class="p-6">
+              <div
+                aria-valuemax="100"
+                aria-valuemin="0"
+                role="progressbar"
+                data-state="indeterminate"
+                data-max="100"
+                class="relative h-2 w-full overflow-hidden rounded-full bg-primary/20"
+                aria-label="75% completed"
+              >
+                <div
+                  data-state="indeterminate"
+                  data-max="100"
+                  class="h-full w-full flex-1 bg-primary transition-all"
+                  style="transform: translateX(-25%);"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="text-card-foreground shadow-sm p-6 bg-background border border-input rounded-lg"
+            data-v0-t="card"
+          >
+            <div class="flex flex-col space-y-1.5 p-6">
+              <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">
+                Mastering Solidity
+              </h3>
+              <p class="text-sm text-muted-foreground">You've completed 50% of this course.</p>
+            </div>
+            <div class="p-6">
+              <div
+                aria-valuemax="100"
+                aria-valuemin="0"
+                role="progressbar"
+                data-state="indeterminate"
+                data-max="100"
+                class="relative h-2 w-full overflow-hidden rounded-full bg-primary/20"
+                aria-label="50% completed"
+              >
+                <div
+                  data-state="indeterminate"
+                  data-max="100"
+                  class="h-full w-full flex-1 bg-primary transition-all"
+                  style="transform: translateX(-50%);"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="text-card-foreground shadow-sm p-6 bg-background border border-input rounded-lg"
+            data-v0-t="card"
+          >
+            <div class="flex flex-col space-y-1.5 p-6">
+              <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">
+                Decentralized Finance (DeFi)
+              </h3>
+              <p class="text-sm text-muted-foreground">You've completed 25% of this course.</p>
+            </div>
+            <div class="p-6">
+              <div
+                aria-valuemax="100"
+                aria-valuemin="0"
+                role="progressbar"
+                data-state="indeterminate"
+                data-max="100"
+                class="relative h-2 w-full overflow-hidden rounded-full bg-primary/20"
+                aria-label="25% completed"
+              >
+                <div
+                  data-state="indeterminate"
+                  data-max="100"
+                  class="h-full w-full flex-1 bg-primary transition-all"
+                  style="transform: translateX(-75%);"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+      
+    
+    
+    
+    <section style="overflow: hidden; position: relative; background-color: #f4f4f4;">
+      <div style="display: flex; overflow: hidden; width: 100%; position: relative;">
+        <div style="display: flex; width: max-content; animation: scroll-left 20s linear infinite;">
+          <img src="https://happiful-magazine.ghost.io/content/images/2021/12/priscilla-du-preez-XkKCui44iM0-unsplash.jpg" alt="Skill 1" style="width: 300px; height: 200px; object-fit: cover; margin-right: 10px;">
+          <img src="https://media.licdn.com/dms/image/D4D12AQFj8w4ejmfBsQ/article-cover_image-shrink_720_1280/0/1696140807810?e=2147483647&v=beta&t=envlbVp3JobsQJLrfC60oy_KmXwXgsfHvIWxhGseuCo" alt="Skill 2" style="width: 300px; height: 200px; object-fit: cover; margin-right: 10px;">
+          <img src="https://graduate.northeastern.edu/resources/wp-content/uploads/sites/4/2019/09/iStock-1150384596-2.jpg" alt="Skill 3" style="width: 300px; height: 200px; object-fit: cover; margin-right: 10px;">
+          <img src="https://dims.apnews.com/dims4/default/16938e3/2147483647/strip/true/crop/5898x3932+0+0/resize/599x399!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fd3%2F9e%2F7e83f9ec10e2390912c86615c72d%2Fdbce76dfecfd47218d9c7821f893b292" alt="Skill 4" style="width: 300px; height: 200px; object-fit: cover; margin-right: 10px;">
+          <!-- Duplicate images to ensure infinite effect -->
+          <img src="https://happiful-magazine.ghost.io/content/images/2021/12/priscilla-du-preez-XkKCui44iM0-unsplash.jpg" alt="Skill 1" style="width: 300px; height: 200px; object-fit: cover; margin-right: 10px;">
+          <img src="https://media.licdn.com/dms/image/D4D12AQFj8w4ejmfBsQ/article-cover_image-shrink_720_1280/0/1696140807810?e=2147483647&v=beta&t=envlbVp3JobsQJLrfC60oy_KmXwXgsfHvIWxhGseuCo" alt="Skill 2" style="width: 300px; height: 200px; object-fit: cover; margin-right: 10px;">
+          <img src="https://graduate.northeastern.edu/resources/wp-content/uploads/sites/4/2019/09/iStock-1150384596-2.jpg" alt="Skill 3" style="width: 300px; height: 200px; object-fit: cover; margin-right: 10px;">
+          <img src="https://dims.apnews.com/dims4/default/16938e3/2147483647/strip/true/crop/5898x3932+0+0/resize/599x399!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fd3%2F9e%2F7e83f9ec10e2390912c86615c72d%2Fdbce76dfecfd47218d9c7821f893b292" alt="Skill 4" style="width: 300px; height: 200px; object-fit: cover; margin-right: 10px;">
+        </div>
+      </div>
+    </section>
+    
+    
+
+
+
+
+
+
+
+        <section class="py-12 md:py-20">
+          <div class="container mx-auto px-4 md:px-6">
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-2">Featured Courses</h2>
+              <p class="text-muted-foreground">
+                Explore our top-rated Web3 and crypto courses.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <div
+                class="text-card-foreground shadow-sm p-6 bg-background border border-input rounded-lg"
+                data-v0-t="card"
+              >
+                <div class="flex flex-col space-y-1.5 p-6">
+                  <h3
+                    class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight"
+                  >
+                    Introduction to Blockchain
+                  </h3>
+                  <p class="text-sm text-muted-foreground">
+                    Learn the fundamentals of blockchain technology.
+                  </p>
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="w-4 h-4 text-muted-foreground"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                      <span class="text-sm text-muted-foreground">4 hours</span>
+                    </div>
+                    <button
+                      style="
+                        background-color: black;
+                        color: white;
+                        border: none;
+                        border-radius: 4px;
+                        padding: 8px 16px;
+                        cursor: pointer;
+                      "
+                      class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3"
+                    >
+                      Start Course
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="text-card-foreground shadow-sm p-6 bg-background border border-input rounded-lg"
+                data-v0-t="card"
+              >
+                <div class="flex flex-col space-y-1.5 p-6">
+                  <h3
+                    class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight"
+                  >
+                    Mastering Solidity
+                  </h3>
+                  <p class="text-sm text-muted-foreground">
+                    Dive deep into the Solidity programming language.
+                  </p>
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="w-4 h-4 text-muted-foreground"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                      <span class="text-sm text-muted-foreground">8 hours</span>
+                    </div>
+                    <button
+                      style="
+                        background-color: black;
+                        color: white;
+                        border: none;
+                        border-radius: 4px;
+                        padding: 8px 16px;
+                        cursor: pointer;
+                      "
+                      class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3"
+                    >
+                      Start Course
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="text-card-foreground shadow-sm p-6 bg-background border border-input rounded-lg"
+                data-v0-t="card"
+              >
+                <div class="flex flex-col space-y-1.5 p-6">
+                  <h3
+                    class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight"
+                  >
+                    Decentralized Finance (DeFi)
+                  </h3>
+                  <p class="text-sm text-muted-foreground">
+                    Explore the world of decentralized finance.
+                  </p>
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="w-4 h-4 text-muted-foreground"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                      <span class="text-sm text-muted-foreground">6 hours</span>
+                    </div>
+                    <button
+                      style="
+                        background-color: black;
+                        color: white;
+                        border: none;
+                        border-radius: 4px;
+                        padding: 8px 16px;
+                        cursor: pointer;
+                      "
+                      class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3"
+                    >
+                      Start Course
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <center>
+          <section class="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+            <div class="container px-4 md:px-6">
+              <div class="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+                <div class="flex flex-col justify-center space-y-4">
+                  <div class="space-y-2">
+                    <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">WorldWise for Teams</h1>
+                    <p class="max-w-[600px] text-muted-foreground md:text-xl text-gray-300">
+                      Empower your team with decentralized learning and collaboration tools for the Web3 era.
+                    </p>
+                  </div>
+                  <div class="flex justify-center">
+                    <button
+                              style="
+                                background-color: rgb(255, 255, 255);
+                                color: rgb(0, 0, 0);
+                                border: none;
+                                border-radius: 4px;
+                                padding: 8px 16px;
+                                cursor: pointer;
+                              "
+                              class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3"
+                            >
+                             Get Started
+                            </button>
+                  </div>
+                </div>
+                <div class="flex justify-center">
+                  <div class="relative w-full max-w-[400px] rounded-2xl bg-gray-800 p-6 shadow-lg">
+                    <div class="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary p-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="h-8 w-8 text-primary-foreground"
+                      >
+                        <path d="M11.767 19.089c4.924.868 6.14-6.025 1.216-6.894m-1.216 6.894L5.86 18.047m5.908 1.042-.347 1.97m1.563-8.864c4.924.869 6.14-6.025 1.215-6.893m-1.215 6.893-3.94-.694m5.155-6.2L8.29 4.26m5.908 1.042.348-1.97M7.48 20.364l3.126-17.727"></path>
+                      </svg>
+                    </div>
+                    <div class="mt-8 flex flex-col items-center space-y-4">
+                      <h2 class="text-2xl font-bold text-white">Web3 Learning</h2>
+                      <p class="text-center text-gray-300">
+                        Dive into the world of decentralization, blockchain, and the future of the internet.
+                      </p>
+                      <button
+                              style="
+                                background-color: rgb(255, 255, 255);
+                                color: rgb(0, 0, 0);
+                                border: none;
+                                border-radius: 4px;
+                                padding: 8px 16px;
+                                cursor: pointer;
+                              "
+                              class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3"
+                            >
+                             Learn More
+                            </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <section class="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+            <div class="container px-4 md:px-6">
+              <div class="grid gap-6 md:grid-cols-3">
+                <div class="flex flex-col items-center justify-center space-y-4 text-center">
+                  <div class="bg-primary rounded-full p-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="h-8 w-8 text-primary-foreground"
+                    >
+                      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold text-white">Personal Growth</h3>
+                  <p class="max-w-[300px] text-gray-300">
+                    Unlock your full potential with personalized learning paths and self-improvement tools.
+                  </p>
+                  <button
+                              style="
+                                background-color: rgb(255, 255, 255);
+                                color: rgb(0, 0, 0);
+                                border: none;
+                                border-radius: 4px;
+                                padding: 8px 16px;
+                                cursor: pointer;
+                              "
+                              class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3"
+                            >
+                             Learn More
+                            </button>
+                </div>
+                <div class="flex flex-col items-center justify-center space-y-4 text-center">
+                  <div class="bg-primary rounded-full p-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="h-8 w-8 text-primary-foreground"
+                    >
+                      <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                      <rect width="20" height="14" x="2" y="6" rx="2"></rect>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold text-white">Professional Development</h3>
+                  <p class="max-w-[300px] text-gray-300">
+                    Enhance your skills and advance your career with our curated learning resources.
+                  </p>
+                  <button
+                              style="
+                                background-color: rgb(255, 255, 255);
+                                color: rgb(0, 0, 0);
+                                border: none;
+                                border-radius: 4px;
+                                padding: 8px 16px;
+                                cursor: pointer;
+                              "
+                              class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3"
+                            >
+                             Learn More
+                            </button>
+                </div>
+                <div class="flex flex-col items-center justify-center space-y-4 text-center">
+                  <div class="bg-primary rounded-full p-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="h-8 w-8 text-primary-foreground"
+                    >
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold text-white">Team Collaboration</h3>
+                  <p class="max-w-[300px] text-gray-300">
+                    Foster a culture of continuous learning and shared knowledge within your team.
+                  </p>
+                  <button
+                              style="
+                                background-color: rgb(255, 255, 255);
+                                color: rgb(0, 0, 0);
+                                border: none;
+                                border-radius: 4px;
+                                padding: 8px 16px;
+                                cursor: pointer;
+                              "
+                              class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3"
+                            >
+                             Learn More
+                            </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+        </center>
+
+        <section class="py-12 md:py-20">
+          <div class="container mx-auto px-4 md:px-6">
+            <div class="mb-8 flex items-center justify-between">
+              <div>
+                <h2 class="text-2xl font-bold mb-2">Explore Courses</h2>
+                <p class="text-muted-foreground">
+                  Browse our comprehensive Web3 and crypto course catalog.
+                </p>
+              </div>
+              <div class="relative">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground"
+                >
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
+                </svg>
+                <input
+                  class="flex h-10 w-full bg-background px-3 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 pl-10 pr-4 py-2 rounded-lg border border-input focus:outline-none focus:ring-1 focus:ring-primary"
+                  placeholder="Search courses..."
+                  type="search"
+                />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <div
+                class="text-card-foreground shadow-sm p-6 bg-background border border-input rounded-lg"
+                data-v0-t="card"
+              >
+                <div class="flex flex-col space-y-1.5 p-6">
+                  <h3
+                    class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight"
+                  >
+                    Introduction to Blockchain
+                  </h3>
+                  <p class="text-sm text-muted-foreground">
+                    Learn the fundamentals of blockchain technology.
+                  </p>
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="w-4 h-4 text-muted-foreground"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                      <span class="text-sm text-muted-foreground">4 hours</span>
+                    </div>
+                    <button
+                      style="
+                        background-color: black;
+                        color: white;
+                        border: none;
+                        border-radius: 4px;
+                        padding: 8px 16px;
+                        cursor: pointer;
+                      "
+                      class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3"
+                    >
+                      Start Course
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="text-card-foreground shadow-sm p-6 bg-background border border-input rounded-lg"
+                data-v0-t="card"
+              >
+                <div class="flex flex-col space-y-1.5 p-6">
+                  <h3
+                    class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight"
+                  >
+                    Mastering Solidity
+                  </h3>
+                  <p class="text-sm text-muted-foreground">
+                    Dive deep into the Solidity programming language.
+                  </p>
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="w-4 h-4 text-muted-foreground"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                      <span class="text-sm text-muted-foreground">8 hours</span>
+                    </div>
+                    <button
+                      style="
+                        background-color: black;
+                        color: white;
+                        border: none;
+                        border-radius: 4px;
+                        padding: 8px 16px;
+                        cursor: pointer;
+                      "
+                      class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3"
+                    >
+                      Start Course
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="text-card-foreground shadow-sm p-6 bg-background border border-input rounded-lg"
+                data-v0-t="card"
+              >
+                <div class="flex flex-col space-y-1.5 p-6">
+                  <h3
+                    class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight"
+                  >
+                    Decentralized Finance (DeFi)
+                  </h3>
+                  <p class="text-sm text-muted-foreground">
+                    Explore the world of decentralized finance.
+                  </p>
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="w-4 h-4 text-muted-foreground"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                      <span class="text-sm text-muted-foreground">6 hours</span>
+                    </div>
+                    <button
+                      style="
+                        background-color: black;
+                        color: white;
+                        border: none;
+                        border-radius: 4px;
+                        padding: 8px 16px;
+                        cursor: pointer;
+                      "
+                      class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3"
+                    >
+                      Start Course
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="text-card-foreground shadow-sm p-6 bg-background border border-input rounded-lg"
+                data-v0-t="card"
+              >
+                <div class="flex flex-col space-y-1.5 p-6">
+                  <h3
+                    class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight"
+                  >
+                    Non-Fungible Tokens (NFTs)
+                  </h3>
+                  <p class="text-sm text-muted-foreground">
+                    Dive into the world of unique digital assets.
+                  </p>
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="w-4 h-4 text-muted-foreground"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                      <span class="text-sm text-muted-foreground">5 hours</span>
+                    </div>
+                    <button
+                      style="
+                        background-color: black;
+                        color: white;
+                        border: none;
+                        border-radius: 4px;
+                        padding: 8px 16px;
+                        cursor: pointer;
+                      "
+                      class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3"
+                    >
+                      Start Course
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="text-card-foreground shadow-sm p-6 bg-background border border-input rounded-lg"
+                data-v0-t="card"
+              >
+                <div class="flex flex-col space-y-1.5 p-6">
+                  <h3
+                    class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight"
+                  >
+                    Ethereum Development
+                  </h3>
+                  <p class="text-sm text-muted-foreground">
+                    Learn to build decentralized applications on Ethereum.
+                  </p>
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="w-4 h-4 text-muted-foreground"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                      <span class="text-sm text-muted-foreground"
+                        >10 hours</span
+                      >
+                    </div>
+                    <button
+                      style="
+                        background-color: black;
+                        color: white;
+                        border: none;
+                        border-radius: 4px;
+                        padding: 8px 16px;
+                        cursor: pointer;
+                      "
+                      class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3"
+                    >
+                      Start Course
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="text-card-foreground shadow-sm p-6 bg-background border border-input rounded-lg"
+                data-v0-t="card"
+              >
+                <div class="flex flex-col space-y-1.5 p-6">
+                  <h3
+                    class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight"
+                  >
+                    Blockchain for Beginners
+                  </h3>
+                  <p class="text-sm text-muted-foreground">
+                    Get started with the basics of blockchain technology.
+                  </p>
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="w-4 h-4 text-muted-foreground"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                      <span class="text-sm text-muted-foreground">3 hours</span>
+                    </div>
+                    <button
+                      style="
+                        background-color: black;
+                        color: white;
+                        border: none;
+                        border-radius: 4px;
+                        padding: 8px 16px;
+                        cursor: pointer;
+                      "
+                      class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3"
+                    >
+                      Start Course
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+      </main>
+      <footer class="bg-black text-white py-6 px-4 md:px-6">
+        <div class="container mx-auto flex items-center justify-between">
+          <p class="text-sm"> 2024 WorldWise</p>
+          <nav class="flex items-center gap-4">
+            <a class="hover:underline" href="#"> Terms </a>
+            <a class="hover:underline" href="#"> Privacy </a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

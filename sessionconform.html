@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session confirmation-Worldwise</title>
+  <link
+      rel="icon"
+      href="https://miro.medium.com/v2/resize:fit:640/format:webp/1*6b5kOcCRjJ7XDj9M1zpmqw.png"
+      type="image/png"
+    />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+ <!--
+ v0 by Vercel.
+ https://v0.dev/t/iuIhOOpH4vf
+-->
+<header class="bg-black text-white py-4 px-6 flex items-center justify-between">
+  <a class="flex items-center gap-2 text-lg font-semibold" href="#">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="w-6 h-6"
+    >
+      <circle cx="12" cy="12" r="10"></circle>
+      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+      <path d="M2 12h20"></path>
+    </svg>
+    <span>WorldWise</span>
+  </a>
+  <nav class="hidden md:flex items-center gap-6">
+    <a class="hover:underline" href="index.html">Home</a>
+    <a class="hover:underline" href="#">Courses</a>
+    <a class="hover:underline" href="#">Profile</a>
+    <a class="hover:underline" href="#">Rewards</a>
+    <a class="hover:underline" href="skill.html">Add Course</a>
+    <a class="hover:underline" href="session.html">Add Session</a>
+  </nav>
+  <div class="flex items-center gap-4">
+    <a
+      style="background-color: white; color: black"
+      class="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium shadow transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+      <span class="ml-2">WorldID</span>
+    </a>
+    <button
+      class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 md:hidden"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="w-6 h-6"
+      >
+        <line x1="4" x2="20" y1="12" y2="12"></line>
+        <line x1="4" x2="20" y1="6" y2="6"></line>
+        <line x1="4" x2="20" y1="18" y2="18"></line>
+      </svg>
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+  </div>
+</header>
+
+
+<div class="max-w-3xl mx-auto p-6 md:p-8 lg:p-10">
+  <div class="grid gap-6 md:gap-8 lg:gap-10">
+    <div class="grid gap-2 md:gap-3 lg:gap-4">
+      <h1 class="text-2xl font-bold md:text-3xl lg:text-4xl">Live Session Details</h1>
+      <p class="text-muted-foreground text-base font-medium">Review and confirm your live session details before booking.</p>
+    </div>
+    <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+      <div class="p-6 grid gap-6 md:gap-8 lg:gap-10">
+        <div class="grid md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
+          <div class="grid gap-2 md:gap-3 lg:gap-4">
+            <div class="text-sm font-medium text-muted-foreground text-gray-500">Session Type</div>
+            <div class="text-lg font-semibold">Live Session with expert</div>
+          </div>
+          <div class="grid gap-2 md:gap-3 lg:gap-4">
+            <div class="text-sm font-medium text-muted-foreground text-gray-500">Topic</div>
+            <div class="text-lg font-semibold">Introduction to DAOs (Decentralized Autonomous Organizations)</div>
+          </div>
+          <div class="grid gap-2 md:gap-3 lg:gap-4">
+            <div class="text-sm font-medium text-muted-foreground text-gray-500">Date</div>
+            <div class="text-base font-semibold">Thursday, April 20, 2023</div>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
+          <div class="grid gap-2 md:gap-3 lg:gap-4">
+            <div class="text-sm font-medium text-muted-foreground text-gray-500">Time</div>
+            <div class="text-lg font-semibold">3:00 PM - 4:00 PM</div>
+          </div>
+          <div class="grid gap-2 md:gap-3 lg:gap-4">
+            <div class="text-sm font-medium text-muted-foreground text-gray-500">Duration</div>
+            <div class="text-lg font-semibold">2 hours</div>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
+          <div class="grid gap-2 md:gap-3 lg:gap-4">
+            <div class="text-sm font-medium text-muted-foreground text-gray-500">Instructor</div>
+            <div class="text-lg font-semibold">Dana White</div>
+          </div>
+          <div class="grid gap-2 md:gap-3 lg:gap-4">
+            <div class="text-sm font-medium text-muted-foreground text-gray-500">Special Instructions</div>
+            <div class="text-base font-medium">
+              After the session, you'll have the opportunity to ask the instructor questions during a Q&amp;A round.
+            </div>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
+          <div class="grid gap-2 md:gap-3 lg:gap-4">
+            <div class="text-sm font-medium text-muted-foreground text-gray-500">World Time</div>
+            <div class="text-lg font-semibold">3:00 PM - 4:00 PM (New York, USA)</div>
+          </div>
+          <div class="grid gap-1 md:gap-2 lg:gap-2">
+            <div class="text-sm font-medium text-muted-foreground text-gray-500">World Time Zone</div>
+            <div class="text-lg font-regular">Eastern Time (ET)</div>
+          </div>
+          
+        </div>
+        <div class="grid md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
+          <div class="grid gap-2 md:gap-3 lg:gap-4">
+            <div class="text-sm font-medium text-muted-foreground text-gray-500">Cost</div>
+            <div class="text-lg font-semibold">5 WLD</div>
+          </div>
+        </div>
+      </div>
+      <div class="items-center p-6 flex justify-end gap-4">
+        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-gray-200 hover:bg-gray-300 hover:text-gray-700 h-10 px-4 py-2">
+          Edit Session
+        </button>
+        
+        <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-black text-white hover:bg-gray-800 h-10 px-4 py-2" href="sessionbooked.html">
+          Confirm Booking
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div> 
+<footer class="bg-black text-white py-6 px-4 md:px-6">
+  <div class="container mx-auto flex items-center justify-between">
+    <p class="text-sm"> 2024 WorldWise</p>
+    <nav class="flex items-center gap-4">
+      <a class="hover:underline" href="#"> Terms </a>
+      <a class="hover:underline" href="#"> Privacy </a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Session</title>
+    <link
+      rel="icon"
+      href="https://miro.medium.com/v2/resize:fit:640/format:webp/1*6b5kOcCRjJ7XDj9M1zpmqw.png"
+      type="image/png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0;">
+<div>
+  <header class="bg-black text-white py-4 px-6 flex items-center justify-between">
+    <a class="flex items-center gap-2 text-lg font-semibold" href="#">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="w-6 h-6"
+      >
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+        <path d="M2 12h20"></path>
+      </svg>
+      <span>WorldWise</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6">
+      <a class="hover:underline" href="index.html">Home</a>
+      <a class="hover:underline" href="#">Courses</a>
+      <a class="hover:underline" href="#">Profile</a>
+      <a class="hover:underline" href="#">Rewards</a>
+      <a class="hover:underline" href="skill.html">Add Course</a>
+      <a class="hover:underline" href="session.html">Add Session</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a
+        style="background-color: white; color: black"
+        class="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium shadow transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+        <span class="ml-2">WorldID</span>
+      </a>
+      <button
+        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 md:hidden"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="w-6 h-6"
+        >
+          <line x1="4" x2="20" y1="12" y2="12"></line>
+          <line x1="4" x2="20" y1="6" y2="6"></line>
+          <line x1="4" x2="20" y1="18" y2="18"></line>
+        </svg>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+    </div>
+  </header>
+
+  <br>
+    <div style="width: 50%; margin: 0 auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <h1 style="text-align: center;">Create New Session</h1>
+        <form id="createSessionForm" style="display: flex; flex-direction: column;">
+            <label for="imageUpload" style="margin-bottom: 8px; font-weight: bold;">Upload Image:</label>
+            <input type="file" id="imageUpload" name="imageUpload" required style="margin-bottom: 12px; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"><br><br>
+
+            <label for="sessionTopic" style="margin-bottom: 8px; font-weight: bold;">Session Topic:</label>
+            <input type="text" id="sessionTopic" name="sessionTopic" required style="margin-bottom: 12px; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"><br><br>
+
+            <label for="sessionDescription" style="margin-bottom: 8px; font-weight: bold;">Session Description:</label>
+            <textarea id="sessionDescription" name="sessionDescription" rows="4" required style="margin-bottom: 12px; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></textarea><br><br>
+
+            <label for="duration" style="margin-bottom: 8px; font-weight: bold;">Live in (days/weeks):</label>
+            <input type="text" id="duration" name="duration" required style="margin-bottom: 12px; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"><br><br>
+
+            <label for="tokens" style="margin-bottom: 8px; font-weight: bold;">WLD (Worldcoins):</label>
+            <input type="number" id="tokens" name="tokens" required style="margin-bottom: 12px; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"><br><br>
+
+            <label for="expertName" style="margin-bottom: 8px; font-weight: bold;">Expert Name:</label>
+            <input type="text" id="expertName" name="expertName" required style="margin-bottom: 12px; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"><br><br>
+
+            <button type="submit" style="padding: 10px 15px; background-color: #000; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Create Session</button>
+        </form>
+        
+        
+    </div>
+    <br>
+    <footer class="bg-black text-white py-6 px-4 md:px-6">
+      <div class="container mx-auto flex items-center justify-between">
+        <p class="text-sm"> 2024 WorldWise</p>
+        <nav class="flex items-center gap-4">
+          <a class="hover:underline" href="#"> Terms </a>
+          <a class="hover:underline" href="#"> Privacy </a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+    <script src="scripts/main.js"></script>
+
+</body>
+</html>

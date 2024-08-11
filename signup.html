@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In with WorldID</title>
+    <link
+      rel="icon"
+      href="https://miro.medium.com/v2/resize:fit:640/format:webp/1*6b5kOcCRjJ7XDj9M1zpmqw.png"
+      type="image/png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="flex min-h-screen flex-col items-center justify-center bg-gray-100 px-4 py-12 sm:px-6 lg:px-8"
+  >
+    <div class="mx-auto max-w-md space-y-6">
+      <div class="flex flex-col items-center justify-center space-y-4">
+        <div class="rounded-lg border p-6 bg-white shadow-md">
+          <div class="flex items-center justify-center">
+            <img
+              src="https://miro.medium.com/v2/resize:fit:444/format:webp/1*heukV3pq2p9-br2JxDNzFw.png"
+              width="180"
+              height="180"
+              alt="WorldID QR Code"
+              class="aspect-square"
+            />
+          </div>
+          <p class="text-sm text-gray-600 text-center">
+            Please use your World App to scan the QR code
+          </p>
+        </div>
+        <button
+          class="w-48 bg-black text-white py-2 px-4 rounded-md hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+          onclick="location.href='verified.html'"
+        >
+          Verify
+        </button>
+        <a
+          href="index.html"
+          class="text-sm text-gray-600 hover:text-gray-900 transition duration-300 ease-in-out"
+        >
+          Back to Home
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
